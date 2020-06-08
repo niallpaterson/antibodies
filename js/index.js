@@ -4,5 +4,6 @@ window.onload = () => {
   gameBoard
     .drawFrame()
     .drawBoard()
-    .drawHome();
+    .drawHome()
+    .drawSupermarket();
 };
