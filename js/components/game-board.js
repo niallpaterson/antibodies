@@ -1,6 +1,7 @@
 const gameBoard = {
   svgFrame: null,
   gameBoard: null,
+  home: null,
   drawFrame() {
     this.svgFrame = SVG().addTo('main').size(300, 300);
     console.log('made it');
@@ -12,6 +13,16 @@ const gameBoard = {
       .attr({
         fill: '#1f1f1f',
         rx: 15,
+      });
+    return this;
+  },
+  drawHome() {
+    this.home = this.svgFrame
+      .rect(50, 50)
+      .center(25, 275)
+      .attr({
+        fill: '#2E3850',
+        rx: 5,
       });
     return this;
   },
