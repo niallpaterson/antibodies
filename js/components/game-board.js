@@ -5,7 +5,6 @@ const gameBoard = {
   supermarket: null,
   drawFrame() {
     this.svgFrame = SVG().addTo('main').size(300, 300);
-    console.log('made it');
     return this;
   },
   drawBoard() {
