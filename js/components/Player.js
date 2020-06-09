@@ -34,16 +34,12 @@ class Player extends Person {
     this.xCoord = this.token.cx();
     this.yCoord = this.token.cy();
     this.checkShopDistance();
-    if (this.hasShopping === true) {
-      this.checkHomeDistance();
-    }
+    if (this.hasShopping === true) { this.checkHomeDistance(); }
   }
 
   checkShopDistance() {
-    if (this.xCoord >= 225
-      && this.yCoord <= 75) {
-      this.pickUpShopping();
-    }
+    console.log(this.xCoord, this.yCoord);
+    if (this.xCoord >= 50 && this.yCoord <= 50) { this.pickUpShopping(); }
   }
 
   pickUpShopping() {
@@ -52,10 +48,7 @@ class Player extends Person {
   }
 
   checkHomeDistance() {
-    if (this.yCoord >= 250
-      && this.xCoord >= 35) {
-      alert('winner!');
-    }
+    if (this.yCoord >= 250 && this.xCoord <= 50) { alert('winner!'); }
   }
 }
 
