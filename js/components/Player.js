@@ -1,4 +1,5 @@
 import Person from './Person.js';
+import tokens from './tokens.js';
 
 class Player extends Person {
   constructor(name, xCoord, yCoord, color, hasShopping) {
@@ -7,27 +8,19 @@ class Player extends Person {
     this.hasShopping = false;
   }
 
-  get currentX() {
-    return this.token.cx();
-  }
-
-  get currentY() {
-    return this.token.cy();
-  }
-
   moveToken(direction) {
     switch (direction) {
       case 'up':
-        this.token.animate(100, 10, 'now').dy(-15);
+        this.token.animate(250, 0, 'now').ease('-').dy(-15);
         break;
       case 'left':
-        this.token.animate(100, 10, 'now').dx(-15);
+        this.token.animate(250, 0, 'now').ease('-').dx(-15);
         break;
       case 'down':
-        this.token.animate(100, 10, 'now').dy(15);
+        this.token.animate(250, 0, 'now').ease('-').dy(15);
         break;
       case 'right':
-        this.token.animate(100, 10, 'now').dx(15);
+        this.token.animate(250, 0, 'now').ease('-').dx(15);
         break;
       // no default
     }
@@ -49,6 +42,17 @@ class Player extends Person {
     if (this.currentY >= 250
       && this.currentX <= 50
       && this.hasShopping === true) { alert('winner!'); }
+    return this;
+  }
+
+  checkNPCDistance() {
+    if (tokens.npcs.some((npc) => {
+      console.log(npc.currentX, this.currentX)
+      return (npc.currentX <= this.currentX + 15) && (npc.currentX >= this.currentX - 15) 
+      && (npc.currentY <= this.currentY + 15) && (npc.currentY >= this.currentY - 15);
+    })) {
+      alert('Loser!');
+    }
     return this;
   }
 }

@@ -18,6 +18,14 @@ class Person {
       });
     return this;
   }
+
+  get currentX() {
+    return this.token.cx();
+  }
+
+  get currentY() {
+    return this.token.cy();
+  }
 }
 
 export default Person;
