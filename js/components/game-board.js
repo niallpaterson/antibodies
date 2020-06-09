@@ -12,7 +12,7 @@ const gameBoard = {
       .rect(300, 300)
       .attr({
         fill: '#000000',
-        rx: 15,
+        rx: 5,
       });
     return this;
   },
