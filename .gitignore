@@ -1,7 +1,7 @@
 # File created using '.gitignore Generator' for Visual Studio Code: https://bit.ly/vscode-gig
 
-# Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,macos,node,zsh
-# Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,macos,node,zsh
+# Created by https://www.toptal.com/developers/gitignore/api/zsh,visualstudiocode,node,macos,sass
+# Edit at https://www.toptal.com/developers/gitignore?templates=zsh,visualstudiocode,node,macos,sass
 
 ### macOS ###
 # General
@@ -140,6 +140,12 @@ dist
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
 
+### Sass ###
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
+
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json
@@ -182,7 +188,7 @@ zsdoc/data
 /tests/_output/*
 !/tests/_output/.gitkeep
 
-# End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,macos,node,zsh
+# End of https://www.toptal.com/developers/gitignore/api/zsh,visualstudiocode,node,macos,sass
 
 # Custom rules (everything added below won't be overriden by 'Generate .gitignore File' if you use 'Update' option)
 
