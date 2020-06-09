@@ -22,13 +22,19 @@ const addEventListeners = {
     });
     return this;
   },
-  forCheckingBuildingDistances() {
+  forCheckingTokenDistances() {
     document.addEventListener('keydown', () => {
-      tokens.player.checkShopDistance().checkHomeDistance();
+      tokens.player
+        .checkNPCDistance()
+        .checkShopDistance()
+        .checkHomeDistance();
     });
 
     document.addEventListener('keyup', () => {
-      tokens.player.checkShopDistance().checkHomeDistance();
+      tokens.player
+        .checkNPCDistance()
+        .checkShopDistance()
+        .checkHomeDistance();
     });
     return this;
   },
