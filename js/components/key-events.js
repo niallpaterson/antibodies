@@ -22,7 +22,7 @@ const addEventListeners = {
     });
     return this;
   },
-  forCheckingTokenDistances() {
+  forCheckingBuildingDistances() {
     document.addEventListener('keydown', () => {
       tokens.player.checkShopDistance().checkHomeDistance();
     });
