@@ -9,11 +9,13 @@ window.onload = () => {
     .drawHome()
     .drawSupermarket();
 
-  tokens.forEach((token) => {
+  tokens.npcs.forEach((token) => {
     token.drawToken();
   });
 
-  addEventListeners
-    .forTokenMovement();
+  tokens.player.drawToken();
 
+  addEventListeners
+    .forTokenMovement()
+    .forCheckingTokenDistances();
 };
