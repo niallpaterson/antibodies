@@ -6,16 +6,16 @@ const addEventListeners = {
       console.log(event.code)
       switch (event.code) {
         case 'KeyW':
-          tokens[12].moveToken('up');
+          tokens.player.moveToken('up');
           break;
         case 'KeyA':
-          tokens[12].moveToken('left');
+          tokens.player.moveToken('left');
           break;
         case 'KeyS':
-          tokens[12].moveToken('down');
+          tokens.player.moveToken('down');
           break;
         case 'KeyD':
-          tokens[12].moveToken('right');
+          tokens.player.moveToken('right');
           break;
 
         // no default
