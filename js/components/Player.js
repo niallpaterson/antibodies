@@ -1,9 +1,10 @@
 import Person from './Person.js';
 
 class Player extends Person {
-  constructor(name, xCoord, yCoord, color) {
-    super(name, xCoord, yCoord, color);
+  constructor(name, xCoord, yCoord, color, hasShopping) {
+    super(name, xCoord, yCoord, color, hasShopping);
     this.color = '#5BFFFF';
+    this.hasShopping = false;
   }
 
   get xPosition() {
