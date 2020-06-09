@@ -52,9 +52,9 @@ class Player extends Person {
   }
 
   checkHomeDistance() {
-    if (this.yCoord >= 240
-      && this.xCoord <= 30) {
-      alert('winner!')
+    if (this.yCoord >= 250
+      && this.xCoord >= 35) {
+      alert('winner!');
     }
   }
 }
