@@ -17,5 +17,4 @@ window.onload = () => {
 
   addEventListeners
     .forTokenMovement();
-
 };
