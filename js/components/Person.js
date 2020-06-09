@@ -1,9 +1,10 @@
 import gameBoard from './game-board.js';
 
 class Person {
-  constructor(name, xCoord, yCoord) {
+  constructor(name, xCoord, yCoord, color) {
     this.name = name;
     this.token = null;
+    this.color = '#86026F';
     this.xCoord = xCoord;
     this.yCoord = yCoord;
   }
@@ -13,7 +14,7 @@ class Person {
       .circle(15)
       .center(this.xCoord, this.yCoord)
       .attr({
-        fill: '#86026F',
+        fill: this.color,
       });
     return this;
   }
