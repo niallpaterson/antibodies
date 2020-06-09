@@ -16,5 +16,6 @@ window.onload = () => {
   tokens.player.drawToken();
 
   addEventListeners
-    .forTokenMovement();
+    .forTokenMovement()
+    .forCheckingTokenDistances();
 };

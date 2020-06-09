@@ -19,6 +19,15 @@ const addEventListeners = {
 
         // no default
       }
+    });
+    return this;
+  },
+  forCheckingTokenDistances() {
+    document.addEventListener('keydown', () => {
+      tokens.player.checkShopDistance().checkHomeDistance();
+    });
+
+    document.addEventListener('keyup', () => {
       tokens.player.checkShopDistance().checkHomeDistance();
     });
     return this;
