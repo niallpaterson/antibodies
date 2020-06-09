@@ -18,16 +18,16 @@ class Player extends Person {
   moveToken(direction) {
     switch (direction) {
       case 'up':
-        this.token.animate(100, 10, 'now').dy(-30);
+        this.token.animate(100, 10, 'now').dy(-15);
         break;
       case 'left':
-        this.token.animate(100, 10, 'now').dx(-30);
+        this.token.animate(100, 10, 'now').dx(-15);
         break;
       case 'down':
-        this.token.animate(100, 10, 'now').dy(30);
+        this.token.animate(100, 10, 'now').dy(15);
         break;
       case 'right':
-        this.token.animate(100, 10, 'now').dx(30);
+        this.token.animate(100, 10, 'now').dx(15);
         break;
       // no default
     }
@@ -41,7 +41,7 @@ class Player extends Person {
 
   pickUpShopping() {
     this.hasShopping = true;
-    this.token.attr({ fill: '#80FF00' });
+    this.token.animate(100, 0, 'now').attr({ fill: '#80FF00' });
     return this;
   }
 
