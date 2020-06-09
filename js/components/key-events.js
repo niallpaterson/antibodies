@@ -3,7 +3,6 @@ import tokens from './tokens.js';
 const addEventListeners = {
   forTokenMovement() {
     document.addEventListener('keydown', (event) => {
-      console.log(event.code)
       switch (event.code) {
         case 'KeyW':
           tokens.player.moveToken('up');
