@@ -1,4 +1,5 @@
 import Person from './Person.js';
+import Player from './Player.js'
 
 const tokens = [
   new Person('geraldine', 62, 43),
@@ -13,6 +14,7 @@ const tokens = [
   new Person('genie', 205, 202),
   new Person('matt', 117, 268),
   new Person('shea', 70, 80),
+  new Player('player', 25, 275),
 ];
 
 export default tokens;
