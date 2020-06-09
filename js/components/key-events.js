@@ -19,6 +19,7 @@ const addEventListeners = {
 
         // no default
       }
+      tokens.player.checkShopDistance().checkHomeDistance();
     });
     return this;
   },

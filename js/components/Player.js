@@ -31,21 +31,25 @@ class Player extends Person {
         break;
       // no default
     }
-    this.checkShopDistance();
-    if (this.hasShopping === true) { this.checkHomeDistance(); }
+    return this;
   }
 
   checkShopDistance() {
     if (this.currentX >= 250 && this.currentY <= 50) { this.pickUpShopping(); }
+    return this;
   }
 
   pickUpShopping() {
     this.hasShopping = true;
     this.token.attr({ fill: '#80FF00' });
+    return this;
   }
 
   checkHomeDistance() {
-    if (this.currentY >= 250 && this.currentX <= 50) { alert('winner!'); }
+    if (this.currentY >= 250
+      && this.currentX <= 50
+      && this.hasShopping === true) { alert('winner!'); }
+    return this;
   }
 }
 
