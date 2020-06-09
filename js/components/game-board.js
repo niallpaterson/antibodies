@@ -11,7 +11,7 @@ const gameBoard = {
     this.board = this.svgFrame
       .rect(300, 300)
       .attr({
-        fill: '#1f1f1f',
+        fill: '#000000',
         rx: 15,
       });
     return this;
