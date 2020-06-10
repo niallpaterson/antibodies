@@ -3,7 +3,11 @@ import gameBoard from './game-board.js';
 import tokens from './tokens.js';
 
 const resetGame = () => {
-  gameBoard.svgFrame.remove();
+  tokens.npcs.forEach((npc) => {
+    npc.token.remove();
+  });
+  tokens.player.token.remove();
+
   tokens.player.moveUp = false;
   tokens.player.moveDown = false;
   tokens.player.moveRight = false;

@@ -3,12 +3,6 @@ import gameBoard from './game-board.js';
 import tokens from './tokens.js';
 
 const startGame = () => {
-  gameBoard
-    .drawFrame()
-    .drawBoard()
-    .drawHome()
-    .drawSupermarket();
-
   tokens.npcs.forEach((token) => {
     token.drawToken()
       .randomlySetMoveDirection();
