@@ -1,10 +1,9 @@
 import gameBoard from './game-board.js';
 
 class Person {
-  constructor(name, xCoord, yCoord, color) {
+  constructor(name, xCoord, yCoord) {
     this.name = name;
     this.token = null;
-    this.color = '#86026F';
     this.xCoord = xCoord;
     this.yCoord = yCoord;
   }
