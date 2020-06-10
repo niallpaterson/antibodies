@@ -1,5 +1,4 @@
 import startGame from './start-game.js';
-import gameBoard from './game-board.js';
 import tokens from './tokens.js';
 
 const resetGame = () => {
