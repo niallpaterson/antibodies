@@ -1,5 +1,6 @@
 import Person from './Person.js';
 import tokens from './tokens.js';
+import resetGame from './reset-game.js';
 
 class Player extends Person {
   constructor(name, xCoord, yCoord, color, hasShopping) {
@@ -41,7 +42,11 @@ class Player extends Person {
   checkHomeDistance() {
     if (this.currentY >= 250
       && this.currentX <= 50
-      && this.hasShopping === true) { alert('winner!'); }
+      && this.hasShopping === true) {
+      alert('winner!');
+      this.hasShopping = false;
+      resetGame();
+    }
     return this;
   }
 
@@ -52,6 +57,8 @@ class Player extends Person {
       && (npc.currentY <= this.currentY + 15) && (npc.currentY >= this.currentY - 15);
     })) {
       alert('Loser!');
+      this.hasShopping = false;
+      resetGame();
     }
     return this;
   }
