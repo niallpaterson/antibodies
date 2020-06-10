@@ -4,7 +4,7 @@ const gameBoard = {
   home: null,
   supermarket: null,
   drawFrame() {
-    this.svgFrame = SVG().addTo('main').size(300, 300);
+    this.svgFrame = SVG().addTo('.gameboard').size(300, 300);
     return this;
   },
   drawBoard() {
