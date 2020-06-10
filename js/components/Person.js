@@ -1,12 +1,15 @@
 import gameBoard from './game-board.js';
 
 class Person {
-  constructor(name, xCoord, yCoord, color) {
+  constructor(name, xCoord, yCoord) {
     this.name = name;
     this.token = null;
-    this.color = '#86026F';
     this.xCoord = xCoord;
     this.yCoord = yCoord;
+    this.moveRight = false;
+    this.moveLeft = false;
+    this.moveUp = false;
+    this.moveDown = false;
   }
 
   drawToken() {
@@ -44,6 +47,30 @@ class Person {
       // no default
     }
     return this;
+  }
+
+  isBySouthWall() {
+    return this.currentY >= 292.5;
+  }
+
+  isByNorthWall() {
+    return this.currentY <= 7.5;
+  }
+
+  isByEastWall() {
+    return this.currentX >= 292.5;
+  }
+
+  isByWestWall() {
+    return this.currentX <= 7.5;
+  }
+
+  isBySupermarketWall() {
+    return this.currentX >= 235 && this.currentY <= 65;
+  }
+
+  isByHomeWall() {
+    return this.currentX <= 65 && this.currentY >= 235;
   }
 }
 

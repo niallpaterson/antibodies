@@ -1,6 +1,7 @@
 import Person from './Person.js';
 import tokens from './tokens.js';
 import resetGame from './reset-game.js';
+import scoreCounter from './score-counter.js';
 
 class Player extends Person {
   constructor(name, xCoord, yCoord, color, hasShopping) {
@@ -24,9 +25,9 @@ class Player extends Person {
     if (this.currentY >= 250
       && this.currentX <= 50
       && this.hasShopping === true) {
-      alert('winner!');
       this.hasShopping = false;
-      resetGame();
+      scoreCounter.increment();
+      this.token.animate(100, 0, 'now').attr({ fill: '#5BFFFF' });
     }
     return this;
   }
@@ -36,8 +37,9 @@ class Player extends Person {
       return (npc.currentX <= this.currentX + 15) && (npc.currentX >= this.currentX - 15)
       && (npc.currentY <= this.currentY + 15) && (npc.currentY >= this.currentY - 15);
     })) {
-      alert('Loser!');
+      
       this.hasShopping = false;
+      scoreCounter.reset();
       resetGame();
     }
     return this;
