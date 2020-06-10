@@ -1,11 +1,15 @@
 import gameBoard from './game-board.js';
 
 class Person {
-  constructor(name, xCoord, yCoord) {
+  constructor(name, xCoord, yCoord, moveUp, moveDown, moveLeft, moveRight) {
     this.name = name;
     this.token = null;
     this.xCoord = xCoord;
     this.yCoord = yCoord;
+    this.moveRight = false;
+    this.moveLeft = false;
+    this.moveUp = false;
+    this.moveDown = false;
   }
 
   drawToken() {

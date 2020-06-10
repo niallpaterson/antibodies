@@ -10,8 +10,8 @@ const startGame = () => {
     .drawSupermarket();
 
   tokens.npcs.forEach((token) => {
-    token.drawToken();
-    setInterval(() => { token.moveInRandomDirection(); }, 100);
+    token.drawToken()
+      .randomlySetMoveDirection();
   });
 
   tokens.player.drawToken();
