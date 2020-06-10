@@ -6,11 +6,12 @@ const startGame = () => {
   tokens.npcs.forEach((token) => {
     token.drawToken();
   });
-  if (!(npcIntervals.intervalsOn)) {
-    npcIntervals.randomlySetMoveDirection();
-    npcIntervals.moveNpcs();
-    npcIntervals.intervalsOn = true;
-  }
+
+  npcIntervals
+    .randomlySetMoveDirection()
+    .moveNpcs()
+    .lockIntervals();
+
   tokens.player.drawToken();
 
   addEventListeners
