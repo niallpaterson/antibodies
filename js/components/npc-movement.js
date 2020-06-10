@@ -3,10 +3,10 @@ import tokens from './tokens.js';
 const runNpcMovementIntervals = () => {
   setInterval(() => {
     tokens.npcs.forEach((npc) => {
-      if (npc.moveUp === true) { npc.moveToken('up'); }
-      if (npc.moveDown === true) { npc.moveToken('down'); }
-      if (npc.moveRight === true) { npc.moveToken('right'); }
-      if (npc.moveLeft === true) { npc.moveToken('left'); }
+      if (npc.moveUp && !(npc.isByNorthWall())) { npc.moveToken('up'); }
+      if (npc.moveDown && !(npc.isBySouthWall())) { npc.moveToken('down'); }
+      if (npc.moveRight && !(npc.isByEastWall())) { npc.moveToken('right'); }
+      if (npc.moveLeft && !(npc.isByWestWall())) { npc.moveToken('left'); }
     });
   }, 10);
 };

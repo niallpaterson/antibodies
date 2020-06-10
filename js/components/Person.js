@@ -48,6 +48,22 @@ class Person {
     }
     return this;
   }
+
+  isBySouthWall() {
+    return this.currentY >= 292.5;
+  }
+
+  isByNorthWall() {
+    return this.currentY <= 7.5;
+  }
+
+  isByEastWall() {
+    return this.currentX >= 292.5;
+  }
+
+  isByWestWall() {
+    return this.currentX <= 7.5;
+  }
 }
 
 export default Person;
