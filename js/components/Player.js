@@ -1,30 +1,12 @@
 import Person from './Person.js';
 import tokens from './tokens.js';
+import resetGame from './reset-game.js';
 
 class Player extends Person {
   constructor(name, xCoord, yCoord, color, hasShopping) {
     super(name, xCoord, yCoord, color, hasShopping);
     this.color = '#5BFFFF';
     this.hasShopping = false;
-  }
-
-  moveToken(direction) {
-    switch (direction) {
-      case 'up':
-        this.token.animate(250, 0, 'now').ease('-').dy(-15);
-        break;
-      case 'left':
-        this.token.animate(250, 0, 'now').ease('-').dx(-15);
-        break;
-      case 'down':
-        this.token.animate(250, 0, 'now').ease('-').dy(15);
-        break;
-      case 'right':
-        this.token.animate(250, 0, 'now').ease('-').dx(15);
-        break;
-      // no default
-    }
-    return this;
   }
 
   checkShopDistance() {
@@ -41,17 +23,22 @@ class Player extends Person {
   checkHomeDistance() {
     if (this.currentY >= 250
       && this.currentX <= 50
-      && this.hasShopping === true) { alert('winner!'); }
+      && this.hasShopping === true) {
+      alert('winner!');
+      this.hasShopping = false;
+      resetGame();
+    }
     return this;
   }
 
   checkNPCDistance() {
     if (tokens.npcs.some((npc) => {
-      console.log(npc.currentX, this.currentX)
-      return (npc.currentX <= this.currentX + 15) && (npc.currentX >= this.currentX - 15) 
+      return (npc.currentX <= this.currentX + 15) && (npc.currentX >= this.currentX - 15)
       && (npc.currentY <= this.currentY + 15) && (npc.currentY >= this.currentY - 15);
     })) {
       alert('Loser!');
+      this.hasShopping = false;
+      resetGame();
     }
     return this;
   }
