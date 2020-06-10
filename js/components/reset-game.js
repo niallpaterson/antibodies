@@ -1,13 +1,13 @@
 import startGame from './start-game.js';
 import gameBoard from './game-board.js';
-import settings from './settings.js';
+import tokens from './tokens.js';
 
 const resetGame = () => {
   gameBoard.svgFrame.remove();
-  settings.playerMoveRight = false;
-  settings.playerMoveLeft = false;
-  settings.playerMoveUp = false;
-  settings.playerMoveDown = false;
+  tokens.player.moveUp = false;
+  tokens.player.moveDown = false;
+  tokens.player.moveRight = false;
+  tokens.player.moveLeft = false;
   startGame();
 };
 
