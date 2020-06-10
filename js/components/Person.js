@@ -64,6 +64,14 @@ class Person {
   isByWestWall() {
     return this.currentX <= 7.5;
   }
+
+  isBySupermarketWall() {
+    return this.currentX >= 235 && this.currentY <= 65;
+  }
+
+  isByHomeWall() {
+    return this.currentX <= 65 && this.currentY >= 235;
+  }
 }
 
 export default Person;
