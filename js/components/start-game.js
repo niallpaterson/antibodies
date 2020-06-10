@@ -1,6 +1,7 @@
 import addEventListeners from './key-events.js';
 import gameBoard from './game-board.js';
 import tokens from './tokens.js';
+import runPlayerMovementIntervals from './player-movement.js';
 
 const startGame = () => {
   gameBoard
@@ -19,6 +20,8 @@ const startGame = () => {
   addEventListeners
     .forTokenMovement()
     .forCheckingTokenDistances();
+
+  runPlayerMovementIntervals();
 };
 
 export default startGame;

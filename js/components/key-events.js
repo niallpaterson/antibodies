@@ -1,20 +1,39 @@
 import tokens from './tokens.js';
+import settings from './settings.js';
 
 const addEventListeners = {
   forTokenMovement() {
     document.addEventListener('keydown', (event) => {
       switch (event.code) {
         case 'KeyW':
-          tokens.player.moveToken('up');
+          settings.playerMoveUp = true;
           break;
         case 'KeyA':
-          tokens.player.moveToken('left');
+          settings.playerMoveLeft = true;
           break;
         case 'KeyS':
-          tokens.player.moveToken('down');
+          settings.playerMoveDown = true;
           break;
         case 'KeyD':
-          tokens.player.moveToken('right');
+          settings.playerMoveRight = true;
+          break;
+
+        // no default
+      }
+    });
+    document.addEventListener('keyup', (event) => {
+      switch (event.code) {
+        case 'KeyW':
+          settings.playerMoveUp = false;
+          break;
+        case 'KeyA':
+          settings.playerMoveLeft = false;
+          break;
+        case 'KeyS':
+          settings.playerMoveDown = false;
+          break;
+        case 'KeyD':
+          settings.playerMoveRight = false;
           break;
 
         // no default
