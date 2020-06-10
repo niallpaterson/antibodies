@@ -6,7 +6,7 @@ class Npc extends Person {
     this.color = '#86026F';
   }
 
-  selectRandomDirection() {
+  moveInRandomDirection() {
     const randomNumber = Math.random();
     if (randomNumber < 0.25) {
       this.moveToken('up');
