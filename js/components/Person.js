@@ -26,6 +26,25 @@ class Person {
   get currentY() {
     return this.token.cy();
   }
+
+  moveToken(direction) {
+    switch (direction) {
+      case 'up':
+        this.token.animate(250, 0, 'now').ease('-').dy(-15);
+        break;
+      case 'left':
+        this.token.animate(250, 0, 'now').ease('-').dx(-15);
+        break;
+      case 'down':
+        this.token.animate(250, 0, 'now').ease('-').dy(15);
+        break;
+      case 'right':
+        this.token.animate(250, 0, 'now').ease('-').dx(15);
+        break;
+      // no default
+    }
+    return this;
+  }
 }
 
 export default Person;

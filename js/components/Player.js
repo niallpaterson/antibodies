@@ -9,25 +9,6 @@ class Player extends Person {
     this.hasShopping = false;
   }
 
-  moveToken(direction) {
-    switch (direction) {
-      case 'up':
-        this.token.animate(250, 0, 'now').ease('-').dy(-15);
-        break;
-      case 'left':
-        this.token.animate(250, 0, 'now').ease('-').dx(-15);
-        break;
-      case 'down':
-        this.token.animate(250, 0, 'now').ease('-').dy(15);
-        break;
-      case 'right':
-        this.token.animate(250, 0, 'now').ease('-').dx(15);
-        break;
-      // no default
-    }
-    return this;
-  }
-
   checkShopDistance() {
     if (this.currentX >= 250 && this.currentY <= 50) { this.pickUpShopping(); }
     return this;
@@ -52,8 +33,7 @@ class Player extends Person {
 
   checkNPCDistance() {
     if (tokens.npcs.some((npc) => {
-      console.log(npc.currentX, this.currentX)
-      return (npc.currentX <= this.currentX + 15) && (npc.currentX >= this.currentX - 15) 
+      return (npc.currentX <= this.currentX + 15) && (npc.currentX >= this.currentX - 15)
       && (npc.currentY <= this.currentY + 15) && (npc.currentY >= this.currentY - 15);
     })) {
       alert('Loser!');
