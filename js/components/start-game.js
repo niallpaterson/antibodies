@@ -11,6 +11,7 @@ const startGame = () => {
 
   tokens.npcs.forEach((token) => {
     token.drawToken();
+    setInterval(() => { token.selectRandomDirection(); }, 100);
   });
 
   tokens.player.drawToken();
