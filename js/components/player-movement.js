@@ -1,18 +1,17 @@
-import settings from './settings.js';
 import tokens from './tokens.js';
 
 const runPlayerMovementIntervals = () => {
   setInterval(() => {
-    if (settings.playerMoveUp === true) {
+    if (tokens.player.moveUp === true) {
       tokens.player.moveToken('up');
     }
-    if (settings.playerMoveDown === true) {
+    if (tokens.player.moveDown === true) {
       tokens.player.moveToken('down');
     }
-    if (settings.playerMoveRight === true) {
+    if (tokens.player.moveRight === true) {
       tokens.player.moveToken('right');
     }
-    if (settings.playerMoveLeft === true) {
+    if (tokens.player.moveLeft === true) {
       tokens.player.moveToken('left');
     }
   }, 10);
