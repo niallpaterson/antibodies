@@ -1,5 +1,6 @@
 import startGame from './start-game.js';
 import tokens from './tokens.js';
+import scoreCounter from './score-counter.js';
 
 const resetGame = () => {
   tokens.npcs.forEach((npc) => {
@@ -11,6 +12,7 @@ const resetGame = () => {
   tokens.player.moveDown = false;
   tokens.player.moveRight = false;
   tokens.player.moveLeft = false;
+  scoreCounter.reset();
   startGame();
 };
 
