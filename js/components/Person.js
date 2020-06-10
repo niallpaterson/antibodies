@@ -1,7 +1,7 @@
 import gameBoard from './game-board.js';
 
 class Person {
-  constructor(name, xCoord, yCoord, moveUp, moveDown, moveLeft, moveRight) {
+  constructor(name, xCoord, yCoord) {
     this.name = name;
     this.token = null;
     this.xCoord = xCoord;
