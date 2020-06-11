@@ -11,12 +11,15 @@ const collisionIntervals = {
       setInterval(() => {
         tokens.npcs.forEach((npc) => {
           tokens.npcs.forEach((otherNpc) => {
-            if (npc !== otherNpc && this.hasCollided(npc, person2) && npc.isInfected) {
-              // otherNpc.isInfected = true;
+            if (npc !== otherNpc && this.hasCollided(npc, otherNpc) && npc.isInfected) {
+              otherNpc.isInfected = true;
+              otherNpc.token
+                .animate(1000, 0, 'now').attr({ fill: '#FFCC00' })
+                .animate(1000, 0, 'after').attr({ fill: '#86026F' });
             }
           });
         });
-      }, 10);
+      }, 100);
     }
     return this;
   },
@@ -25,16 +28,21 @@ const collisionIntervals = {
       setInterval(() => {
         tokens.npcs.forEach((npc) => {
           if (this.hasCollided(tokens.player, npc) && npc.isInfected) {
-            // player.isInfected = true;
             resetGame();
           }
         });
-      }, 10);
+      }, 100);
     }
     return this;
   },
-  hasCollided(person1, person2) {
-    // person1.token is in the same space as person2.token;
+  hasCollided(pers1, pers2) {
+    console.log('made it')
+    return Math.sqrt(
+      ((pers1.currentX - pers2.currentX)
+    * (pers1.currentX - pers2.currentX))
+    + ((pers1.currentY - pers2.currentY)
+    * (pers1.currentY - pers2.currentY))
+    ) <= 15;
   },
 };
 
