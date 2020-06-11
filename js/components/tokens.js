@@ -18,7 +18,7 @@ const tokens = {
   ],
   makeNpc() {
     if (this.npcCounter < this.npcs.length) {
-      tokens.npcs[this.npcCounter]
+      this.npcs[this.npcCounter]
         .drawToken();
       this.npcCounter += 1;
     }
