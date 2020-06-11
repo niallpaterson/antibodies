@@ -3,7 +3,7 @@ import Player from './Player.js'
 
 const tokens = {
   npcs: [
-    new Npc('geraldine', 62, 43),
+    new Npc('geraldine', 62, 43, true),
     new Npc('keith', 125, 54),
     new Npc('dorothy', 175, 35),
     new Npc('jezebel', 117, 87),
