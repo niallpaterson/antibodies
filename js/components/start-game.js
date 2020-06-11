@@ -4,6 +4,7 @@ import tokens from './tokens.js';
 import collisionIntervals from './collisions.js';
 
 const startGame = () => {
+  tokens.player.resetCoordinates();
   tokens.makeNpc().makeNpc().makeNpc();
 
   npcIntervals
