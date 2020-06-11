@@ -5,6 +5,14 @@ class Npc extends Person {
     super(name, xCoord, yCoord, color);
     this.color = '#86026F';
   }
+
+  isBySupermarketWall() {
+    return this.currentX >= 235 && this.currentY <= 65;
+  }
+
+  isByHomeWall() {
+    return this.currentX <= 65 && this.currentY >= 235;
+  }
 }
 
 export default Npc;
