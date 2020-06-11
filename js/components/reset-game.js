@@ -21,8 +21,6 @@ const resetGame = (infectorName) => {
   tokens.player.moveRight = false;
   tokens.player.moveLeft = false;
   tokens.player.isInfected = false;
-
-  scoreCounter.reset();
 };
 
 export default resetGame;

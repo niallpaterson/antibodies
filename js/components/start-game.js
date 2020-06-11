@@ -3,6 +3,7 @@ import npcIntervals from './npc-movement.js';
 import tokens from './tokens.js';
 import collisionIntervals from './collisions.js';
 import gameBoard from './game-board.js';
+import scoreCounter from './score-counter.js'
 
 const startGame = () => {
   tokens.player.resetCoordinates();
@@ -23,6 +24,7 @@ const startGame = () => {
     .forTokenMovement()
     .forCheckingTokenDistances();
 
+  scoreCounter.reset();
   gameBoard.hideMenu();
 };
 
