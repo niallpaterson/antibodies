@@ -19,7 +19,7 @@ class Person {
   drawToken() {
     this.token = gameBoard.svgFrame
       .circle(15)
-      .center(this.xCoord, this.yCoord)
+      .center(this.initialXCoord, this.initialYCoord)
       .attr({
         fill: this.color,
       });
