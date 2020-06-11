@@ -1,5 +1,4 @@
 import startGame from './start-game.js';
-import resetGame from './reset-game.js';
 
 const addRunGameEventListeners = {
   toStartButton() {
