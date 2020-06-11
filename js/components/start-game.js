@@ -1,12 +1,10 @@
 import addEventListeners from './key-events.js';
-import tokens from './tokens.js';
 import npcIntervals from './npc-movement.js';
+import tokens from './tokens.js';
 import collisionIntervals from './collisions.js';
 
 const startGame = () => {
-  tokens.npcs.forEach((token) => {
-    token.drawToken();
-  });
+  tokens.makeNpc().makeNpc().makeNpc();
 
   npcIntervals
     .randomlySetMoveDirection()

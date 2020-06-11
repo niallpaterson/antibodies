@@ -25,6 +25,7 @@ const tokens = {
         .drawToken();
       this.npcCounter += 1;
     }
+    return this;
   },
   player: new Player('player', 25, 275),
 };
