@@ -27,6 +27,7 @@ class Player extends Person {
       && this.hasShopping === true) {
       this.hasShopping = false;
       scoreCounter.increment();
+      tokens.makeNpc();
       this.token.animate(100, 0, 'now').attr({ fill: '#5BFFFF' });
     }
     return this;
