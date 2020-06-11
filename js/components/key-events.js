@@ -43,14 +43,12 @@ const addEventListeners = {
   forCheckingTokenDistances() {
     document.addEventListener('keydown', () => {
       tokens.player
-        .checkNPCDistance()
         .checkShopDistance()
         .checkHomeDistance();
     });
 
     document.addEventListener('keyup', () => {
       tokens.player
-        .checkNPCDistance()
         .checkShopDistance()
         .checkHomeDistance();
     });
