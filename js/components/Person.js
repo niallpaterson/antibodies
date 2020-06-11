@@ -11,6 +11,9 @@ class Person {
     this.moveUp = false;
     this.moveDown = false;
     this.isInfected = isInfected || false;
+    this.initialXCoord = xCoord;
+    this.initialYCoord = yCoord;
+    this.initialInfection = isInfected || false;
   }
 
   drawToken() {
@@ -76,6 +79,21 @@ class Person {
 
   isByHomeWall() {
     return this.currentX <= 65 && this.currentY >= 235;
+  }
+
+  resetCoordinates() {
+    this.xCoord = this.initialXCoord;
+    this.yCoord = this.initialYCoord;
+    return this;
+  }
+
+  resetInfection() {
+    if (this.initialInfection) {
+      this.isInfected = true;
+    } else {
+      this.isInfected = false;
+    }
+    return this;
   }
 }
 
