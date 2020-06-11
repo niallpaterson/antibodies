@@ -7,7 +7,9 @@ window.onload = () => {
     .drawFrame()
     .drawBoard()
     .drawHome()
-    .drawSupermarket();
+    .drawSupermarket()
+    .drawMenu()
+    .drawStartText();
 
   addRunGameEventListeners
     .toStartButton();

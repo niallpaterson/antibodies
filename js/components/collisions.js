@@ -30,7 +30,7 @@ const collisionIntervals = {
       setInterval(() => {
         tokens.npcs.forEach((npc) => {
           if (this.hasCollided(tokens.player, npc) && npc.isInfected) {
-            resetGame();
+            resetGame(npc.name);
           }
         });
       }, 100);
