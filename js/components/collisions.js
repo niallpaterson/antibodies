@@ -10,14 +10,16 @@ const collisionIntervals = {
     if (!this.intervalsOn) {
       setInterval(() => {
         tokens.npcs.forEach((npc) => {
-          tokens.npcs.forEach((otherNpc) => {
-            if (npc !== otherNpc && this.hasCollided(npc, otherNpc) && npc.isInfected) {
-              otherNpc.isInfected = true;
-              otherNpc.token
-                .animate(1000, 0, 'now').attr({ fill: '#FFCC00' })
-                .animate(1000, 0, 'after').attr({ fill: '#86026F' });
-            }
-          });
+          if (npc.isOnBoard) {
+            tokens.npcs.forEach((otherNpc) => {
+              if (otherNpc.isOnBoard && npc !== otherNpc && this.hasCollided(npc, otherNpc) && npc.isInfected) {
+                otherNpc.isInfected = true;
+                otherNpc.token
+                  .animate(1000, 0, 'now').attr({ fill: '#FFCC00' })
+                  .animate(1000, 0, 'after').attr({ fill: '#86026F' });
+              }
+            });
+          };
         });
       }, 100);
     }
