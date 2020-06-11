@@ -2,6 +2,8 @@ import addEventListeners from './key-event-listeners.js';
 import npcIntervals from './npc-movement.js';
 import tokens from './tokens.js';
 import collisionIntervals from './collisions.js';
+import gameBoard from './game-board.js';
+import scoreCounter from './score-counter.js'
 
 const startGame = () => {
   tokens.player.resetCoordinates();
@@ -21,6 +23,9 @@ const startGame = () => {
   addEventListeners
     .forTokenMovement()
     .forCheckingTokenDistances();
+
+  scoreCounter.reset();
+  gameBoard.hideMenu();
 };
 
 export default startGame;
