@@ -4,26 +4,35 @@ class Person {
   constructor(name, xCoord, yCoord, isInfected) {
     this.name = name;
     this.token = null;
-    this.xCoord = xCoord;
-    this.yCoord = yCoord;
     this.moveRight = false;
     this.moveLeft = false;
     this.moveUp = false;
     this.moveDown = false;
-    this.isInfected = isInfected || false;
+    this.xCoord = xCoord;
+    this.yCoord = yCoord;
     this.initialXCoord = xCoord;
     this.initialYCoord = yCoord;
+    this.isInfected = isInfected || false;
     this.initialInfection = isInfected || false;
   }
 
   drawToken() {
     this.token = gameBoard.svgFrame
       .circle(15)
-      .center(this.xCoord, this.yCoord)
+      .center(this.initialXCoord, this.initialYCoord)
       .attr({
         fill: this.color,
       });
+    this.isOnBoard = true;
     return this;
+  }
+
+  removeToken() {
+    if (this.token) {
+      this.token.remove();
+      this.token = null;
+    }
+    this.isOnBoard = false;
   }
 
   get currentX() {
@@ -71,14 +80,6 @@ class Person {
 
   isByWestWall() {
     return this.currentX <= 7.5;
-  }
-
-  isBySupermarketWall() {
-    return this.currentX >= 235 && this.currentY <= 65;
-  }
-
-  isByHomeWall() {
-    return this.currentX <= 65 && this.currentY >= 235;
   }
 
   resetCoordinates() {

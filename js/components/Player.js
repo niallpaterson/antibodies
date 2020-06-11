@@ -1,6 +1,5 @@
 import Person from './Person.js';
 import tokens from './tokens.js';
-import resetGame from './reset-game.js';
 import scoreCounter from './score-counter.js';
 
 class Player extends Person {

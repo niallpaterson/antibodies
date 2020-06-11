@@ -4,8 +4,6 @@ import Player from './Player.js'
 const tokens = {
   npcCounter: 0,
   npcs: [
-  ],
-  inactiveNpcs: [
     new Npc('geraldine', 62, 43, true),
     new Npc('keith', 125, 54),
     new Npc('dorothy', 175, 35),
@@ -19,9 +17,8 @@ const tokens = {
     new Npc('shea', 70, 80),
   ],
   makeNpc() {
-    if (this.inactiveNpcs[0]) {
-      this.npcs.push(this.inactiveNpcs.shift());
-      tokens.npcs[this.npcCounter]
+    if (this.npcCounter < this.npcs.length) {
+      this.npcs[this.npcCounter]
         .drawToken();
       this.npcCounter += 1;
     }
