@@ -1,6 +1,7 @@
 import addEventListeners from './key-events.js';
 import tokens from './tokens.js';
-import npcIntervals from './npc-movement.js'
+import npcIntervals from './npc-movement.js';
+import collisionIntervals from './collisions.js';
 
 const startGame = () => {
   tokens.npcs.forEach((token) => {
@@ -13,6 +14,10 @@ const startGame = () => {
     .lockIntervals();
 
   tokens.player.drawToken();
+
+  collisionIntervals
+    .forNpcs()
+    .forPlayer();
 
   addEventListeners
     .forTokenMovement()

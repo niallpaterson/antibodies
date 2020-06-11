@@ -31,19 +31,6 @@ class Player extends Person {
     }
     return this;
   }
-
-  checkNPCDistance() {
-    if (tokens.npcs.some((npc) => {
-      return (npc.currentX <= this.currentX + 15) && (npc.currentX >= this.currentX - 15)
-      && (npc.currentY <= this.currentY + 15) && (npc.currentY >= this.currentY - 15);
-    })) {
-      
-      this.hasShopping = false;
-      scoreCounter.reset();
-      resetGame();
-    }
-    return this;
-  }
 }
 
 export default Player;
