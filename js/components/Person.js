@@ -1,7 +1,7 @@
 import gameBoard from './game-board.js';
 
 class Person {
-  constructor(name, xCoord, yCoord) {
+  constructor(name, xCoord, yCoord, isInfected) {
     this.name = name;
     this.token = null;
     this.xCoord = xCoord;
@@ -10,6 +10,10 @@ class Person {
     this.moveLeft = false;
     this.moveUp = false;
     this.moveDown = false;
+    this.isInfected = isInfected || false;
+    this.initialXCoord = xCoord;
+    this.initialYCoord = yCoord;
+    this.initialInfection = isInfected || false;
   }
 
   drawToken() {
@@ -23,26 +27,30 @@ class Person {
   }
 
   get currentX() {
-    return this.token.cx();
+    return this.xCoord;
   }
 
   get currentY() {
-    return this.token.cy();
+    return this.yCoord;
   }
 
   moveToken(direction) {
     switch (direction) {
       case 'up':
         this.token.animate(15, 0, 'now').ease('-').dy(-1.5);
+        this.yCoord -= 1.5;
         break;
       case 'left':
         this.token.animate(15, 0, 'now').ease('-').dx(-1.5);
+        this.xCoord -= 1.5;
         break;
       case 'down':
         this.token.animate(15, 0, 'now').ease('-').dy(1.5);
+        this.yCoord += 1.5;
         break;
       case 'right':
         this.token.animate(15, 0, 'now').ease('-').dx(1.5);
+        this.xCoord += 1.5;
         break;
       // no default
     }
@@ -71,6 +79,21 @@ class Person {
 
   isByHomeWall() {
     return this.currentX <= 65 && this.currentY >= 235;
+  }
+
+  resetCoordinates() {
+    this.xCoord = this.initialXCoord;
+    this.yCoord = this.initialYCoord;
+    return this;
+  }
+
+  resetInfection() {
+    if (this.initialInfection) {
+      this.isInfected = true;
+    } else {
+      this.isInfected = false;
+    }
+    return this;
   }
 }
 

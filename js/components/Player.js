@@ -27,20 +27,8 @@ class Player extends Person {
       && this.hasShopping === true) {
       this.hasShopping = false;
       scoreCounter.increment();
+      tokens.makeNpc();
       this.token.animate(100, 0, 'now').attr({ fill: '#5BFFFF' });
-    }
-    return this;
-  }
-
-  checkNPCDistance() {
-    if (tokens.npcs.some((npc) => {
-      return (npc.currentX <= this.currentX + 15) && (npc.currentX >= this.currentX - 15)
-      && (npc.currentY <= this.currentY + 15) && (npc.currentY >= this.currentY - 15);
-    })) {
-      
-      this.hasShopping = false;
-      scoreCounter.reset();
-      resetGame();
     }
     return this;
   }
