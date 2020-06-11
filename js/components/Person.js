@@ -1,7 +1,7 @@
 import gameBoard from './game-board.js';
 
 class Person {
-  constructor(name, xCoord, yCoord) {
+  constructor(name, xCoord, yCoord, isInfected) {
     this.name = name;
     this.token = null;
     this.xCoord = xCoord;
@@ -10,6 +10,7 @@ class Person {
     this.moveLeft = false;
     this.moveUp = false;
     this.moveDown = false;
+    this.isInfected = isInfected || false;
   }
 
   drawToken() {
