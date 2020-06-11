@@ -4,15 +4,15 @@ class Person {
   constructor(name, xCoord, yCoord, isInfected) {
     this.name = name;
     this.token = null;
-    this.xCoord = xCoord;
-    this.yCoord = yCoord;
     this.moveRight = false;
     this.moveLeft = false;
     this.moveUp = false;
     this.moveDown = false;
-    this.isInfected = isInfected || false;
+    this.xCoord = xCoord;
+    this.yCoord = yCoord;
     this.initialXCoord = xCoord;
     this.initialYCoord = yCoord;
+    this.isInfected = isInfected || false;
     this.initialInfection = isInfected || false;
   }
 
