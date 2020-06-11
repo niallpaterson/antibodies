@@ -23,7 +23,16 @@ class Person {
       .attr({
         fill: this.color,
       });
+    this.isOnBoard = true;
     return this;
+  }
+
+  removeToken() {
+    if (this.token) {
+      this.token.remove();
+      this.token = null;
+    }
+    this.isOnBoard = false;
   }
 
   get currentX() {
