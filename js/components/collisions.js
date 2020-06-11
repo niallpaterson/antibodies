@@ -15,8 +15,8 @@ const collisionIntervals = {
               if (otherNpc.isOnBoard && npc !== otherNpc && this.hasCollided(npc, otherNpc) && npc.isInfected) {
                 otherNpc.isInfected = true;
                 otherNpc.token
-                  .animate(1000, 0, 'now').attr({ fill: '#FFCC00' })
-                  .animate(1000, 0, 'after').attr({ fill: '#86026F' });
+                  .animate(5000, 0, 'now').attr({ fill: '#FFCC00' })
+                  .animate(5000, 0, 'after').attr({ fill: '#86026F' });
               }
             });
           };
