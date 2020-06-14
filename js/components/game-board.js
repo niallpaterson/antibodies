@@ -49,7 +49,7 @@ const gameBoard = {
   },
   drawStartText() {
     this.text = this.svgFrame
-      .text('The infection is here. \n\n\n Stockpile to survive. \n\n\n Press start to begin.')
+      .text('The infection is here. \n\n\n Stockpile to survive. \n\n\n Use WASD to move.')
       .center(150, 150);
     return this;
   },
