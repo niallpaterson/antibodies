@@ -38,6 +38,7 @@ const collisionIntervals = {
     return this;
   },
   hasCollided(pers1, pers2) {
+    // calculate Euclidian distance
     return Math.sqrt(
       ((pers1.currentX - pers2.currentX)
     * (pers1.currentX - pers2.currentX))
