@@ -1,6 +1,6 @@
 # antibodies
 
-Simple game build in javascript in which the user must stockpile resources and avoid infection. 
+Simple game built with javascript; stockpile resources and avoid infection. 
 
 ## Usage
 
