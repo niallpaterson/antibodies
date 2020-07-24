@@ -1,4 +1,4 @@
-# antibodies
+# 🦠 antibodies
 
 Simple game built with javascript; stockpile resources and avoid infection. 
 
